@@ -7,6 +7,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +32,16 @@ public class ShowNeighbourActivity extends AppCompatActivity {
     private NeighbourApiService mApiService;
 
     // Navigate fait la jonction entre l'activité showneighbour.class
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home : {
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     public static void navigate(FragmentActivity activity, Neighbour neighbour) {
         Intent intent = new Intent(activity, ShowNeighbourActivity.class);
@@ -43,6 +54,7 @@ public class ShowNeighbourActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mApiService = DI.getNeighbourApiService();
         super.onCreate(savedInstanceState);
         // Le setContentView cherche et déclenche le layout activity_show_neighbour
@@ -54,7 +66,7 @@ public class ShowNeighbourActivity extends AppCompatActivity {
 
         FloatingActionButton button;
 
-        button = (FloatingActionButton) findViewById(R.id.retourliste);
+       /* button = (FloatingActionButton) findViewById(R.id.retourliste);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +74,7 @@ public class ShowNeighbourActivity extends AppCompatActivity {
             }
 
         });
-
+       */
         FloatingActionButton btnFavorite;
 
         btnFavorite = (FloatingActionButton) findViewById(R.id.add_favorite);
@@ -84,6 +96,7 @@ public class ShowNeighbourActivity extends AppCompatActivity {
             }
 
         });
+
     }
 
     // Déclaration d'une méthode privée qui attend un objet de type Neighbour
@@ -95,12 +108,16 @@ public class ShowNeighbourActivity extends AppCompatActivity {
         final TextView tvTelephone = (TextView) findViewById(R.id.phoneNumber);
         tvTelephone.setText(neighbour.getPhoneNumber());
 
+        // Ajout du textview facebook
+        final TextView tvfacebook = (TextView) findViewById(R.id.facebook);
+        tvfacebook.setText(neighbour.getFacebook());
+
         final TextView tvaddress_neigh = (TextView) findViewById(R.id.address_neigh);
         tvaddress_neigh.setText(neighbour.getAddress());
 
         final TextView tvaboutme = (TextView) findViewById(R.id.aboutme);
         tvaboutme.setText(neighbour.getAboutMe());
-
+        // Test github Desktop
     }
 
 }

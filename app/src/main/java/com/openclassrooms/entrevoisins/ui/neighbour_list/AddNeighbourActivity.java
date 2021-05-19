@@ -33,6 +33,9 @@ public class AddNeighbourActivity extends AppCompatActivity {
     TextInputLayout phoneInput;
     @BindView(R.id.addressLyt)
     TextInputLayout addressInput;
+    // ajout de Facebook
+    @BindView(R.id.facebookLyt)
+    TextInputLayout facebookInput;
     @BindView(R.id.aboutMeLyt)
     TextInputLayout aboutMeInput;
     @BindView(R.id.create)
@@ -87,6 +90,8 @@ public class AddNeighbourActivity extends AppCompatActivity {
                 mNeighbourImage,
                 addressInput.getEditText().getText().toString(),
                 phoneInput.getEditText().getText().toString(),
+       // ajout de facebook
+                facebookInput.getEditText().getText().toString(),
                 aboutMeInput.getEditText().getText().toString()
         );
         mApiService.createNeighbour(neighbour);

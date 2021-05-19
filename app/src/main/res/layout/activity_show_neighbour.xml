@@ -19,17 +19,7 @@
                 android:translationY="-150dp"
                 app:srcCompat="@drawable/shutterstock_image_voisinage" />
 
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/retourliste"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:translationX="10dp"
-                android:translationY="-520dp"
-                app:backgroundTint="#FFFFFF"
-                app:srcCompat="@drawable/ic_return" />
-
-        <ImageView
+            <ImageView
             android:id="@+id/avatar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,7 +65,7 @@
                 <TextView
                     android:id="@+id/address_neigh"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="80dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
 
@@ -97,6 +87,22 @@
                     android:layout_marginTop="82dp"
                     android:padding="10dp"
                     android:text="@string/phone_number" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginTop="120dp"
+                    app:srcCompat="@drawable/ic_facebook" />
+
+                <TextView
+                    android:id="@+id/facebook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="110dp"
+                    android:padding="10dp"
+                    android:text="@string/facebook" />
 
             </android.support.v7.widget.CardView>
 
